@@ -1,0 +1,1 @@
+insert into sampleobject(name,price,quantity,dateOfProduct, checkbox) values('kalem', 12,4, parsedatetime('06-11-1962', 'dd-MM-yyyy'), 'Furniture');

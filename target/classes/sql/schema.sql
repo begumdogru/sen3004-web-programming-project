@@ -1,0 +1,1 @@
+create table sampleobject(name varchar(50), price double, quantity int, dateOfProduct date, checkbox varchar(250));

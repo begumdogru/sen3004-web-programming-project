@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="/css/style.css">
+	<meta charset="UTF-8">
+	<title>Form</title>
+</head>
+
+<body>
+	<h2>Form Processing</h2>
+	<p>Please fill the following form:</p>
+	<form action="/send-form-data" method="post" th:object="${product}" style="text-align: center;">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}"></td>
+				<td th:errors="*{name}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Price:</td>
+				<td><input type="text" th:field="*{price}"></td>
+				<td th:errors="*{price}" class="error"></td>
+			</tr>
+			<tr>
+				<td>Quantity</td>
+				<td><input type="text" th:field="*{quantity}"></td>
+				<td th:errors="*{quantity}" class="error"></td>
+		    </tr>
+		    <tr>
+				<td>Date:</td>
+				<td><input type="text" th:field="*{date}"></td>
+				<td th:errors="*{date}" class="error"></td>
+			</tr>
+			<tr>
+				<td style= "vertical-align: top;">Category: </td>
+				<td>
+					<input type= "checkbox" th:field="*{checkboxSelection}" value ="Furniture"> Furniture <br>
+					<input type= "checkbox" th:field="*{checkboxSelection}" value ="Clothings"> Clothings <br>
+					<input type= "checkbox" th:field="*{checkboxSelection}" value ="Technology"> Technology
+				</td>
+				<td th:errors="*{checkboxSelection}" class="error" style= "vertical-align: top;"></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="Add to Cart"></td>
+			</tr>
+		</table>
+	</form>
+	<p>You can view the list of existing products that you have added <a href="/list.html">here</a>.</p>
+</body>
+
+</html>
